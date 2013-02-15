@@ -44,3 +44,17 @@
   id: expandtab
   brief: Use spaces instead of tabs
   syntax: set expandtab
+-
+  id: long_history
+  brief: Maintain a longer search and command history
+  syntax: set history=1000
+-
+  id: cursorline
+  brief: Highlight current line
+  syntax: set cursorline
+-
+  id: tabstop
+  brief: Number of spaces per tab
+  syntax: set tabstop=%d
+  tag: "%d"
+  input_type: text
