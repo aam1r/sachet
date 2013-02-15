@@ -1,5 +1,18 @@
 -
-  id: theme1
-  brief: Sample theme
-  syntax: colorscheme elflord
+  id: wombat
+  brief: Wombat (dark-gray background with easy-on-the-eyes font colors)
+  syntax: colorscheme wombat
   input_type: radio
+  url: git://github.com/vim-scripts/Wombat.git
+-
+  id: desert
+  brief: Desert (dark-background color scheme inspired by Santa Fe, New Mexico)
+  syntax: colorscheme desert
+  input_type: radio
+  url: git://github.com/fugalh/desert.vim.git
+-
+  id: solarized
+  brief: Solarized (precision colors for machines and people)
+  syntax: colorscheme solarized
+  input_type: radio
+  url: git://github.com/altercation/vim-colors-solarized.git
