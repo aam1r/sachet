@@ -1,0 +1,28 @@
+-
+  id: nerdtree
+  brief: Nerdtree (a tree explorer plugin)
+  syntax: 
+  checked: true
+  url: git://github.com/scrooloose/nerdtree.git
+-
+  id: surround
+  brief: surround (quoting/parenthesizing made simple)
+  syntax: 
+  checked: true
+  url: git://github.com/tpope/vim-surround.git
+-
+  id: supertab
+  brief: supertab (use the tab key to do all your insert completions)
+  syntax: 
+  url: git://github.com/ervandew/supertab.git
+-
+  id: ctrlp
+  brief: ctrlp (Fuzzy file, buffer, mru, tag, etc finder)
+  syntax: set runtimepath^=~/.vim/bundle/ctrlp.vim 
+  checked: true
+  url: git://github.com/kien/ctrlp.vim.git
+-
+  id: fugitive
+  brief: fugitive (a Git wrapper so awesome, it should be illegal)
+  syntax: 
+  url: git://github.com/tpope/vim-fugitive.git

@@ -9,6 +9,7 @@
   brief: Desert (dark-background color scheme inspired by Santa Fe, New Mexico)
   syntax: colorscheme desert
   input_type: radio
+  checked: true
   url: git://github.com/fugalh/desert.vim.git
 -
   id: solarized

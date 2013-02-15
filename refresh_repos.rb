@@ -8,6 +8,7 @@
 require 'yaml'
 
 THEMES = YAML.load_file('data/themes.yaml')
+PLUGINS = YAML.load_file('data/plugins.yaml')
 
 # Given a git url, return the name of the repository
 #   Example: "git://github.com/vim-scripts/Wombat.git" -> "Wombat"
@@ -21,7 +22,8 @@ end
 # Parse through each configuration file with git urls and fetch HEAD for each
 # repository
 def refresh()
-  options = THEMES
+  options = THEMES + PLUGINS
+
   options.each do |option|
     if option['url']
       repo_name = repository_name(option['url'])
