@@ -1,5 +1,9 @@
 require 'sinatra'
+require 'yaml'
 
 get '/' do
-  'Hello world!'
+  configuration = YAML.load_file('data/configuration.yaml')
+  puts configuration.inspect
+
+  erb :index, :locals => {:configuration => configuration}
 end
