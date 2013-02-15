@@ -9,7 +9,14 @@ class VimDownloadable
   end
 
   def to_s
-    @lines
+    # require 'pry'
+    # binding.pry
+    vimrc = @lines.reject(&:nil?)
+
+    # add mandatory pathogen code to enable ~/.vim/bundle functionality
+    vimrc.unshift('" Pathogen', 'call pathogen#infect()', 'call pathogen#helptags()', ' ')
+
+    vimrc.join("\n")
   end
 
   def cleanup
@@ -19,7 +26,7 @@ class VimDownloadable
   def serve_package
     # generates the files and serves it as a downloadable archive
     Zip::Archive.open(@tmp_package.path, Zip::CREATE) do |ar|
-      ar.add_buffer('.vimrc', @lines.join("\n"))
+      ar.add_buffer('.vimrc', to_s)
 
       @packages.each do |package|
         folder = _repo_folder(package['url'])
