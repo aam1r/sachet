@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'yaml'
+require 'tempfile'
+require 'zip/zip'
 require './lib/vim_downloadable'
 
 CONFIGURATION = YAML.load_file('data/configuration.yaml')
@@ -16,5 +18,10 @@ post '/download' do
   vim = VimDownloadable.new(options)
   vim.process_params(params)
 
-  vim.inspect
+  # serve zip file
+  send_file vim.serve_package, :type => 'application/zip',
+                               :disposition => 'attachment',
+                               :filename => 'sachet.zip'
+
+  vim.cleanup
 end

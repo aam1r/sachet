@@ -1,13 +1,28 @@
 class VimDownloadable
-  attr_accessor :lines, :options
+  attr_accessor :lines, :options, :tmp_package
 
   def initialize(options)
     @lines = []
     @options = options
+    @tmp_package = Tempfile.new("temp-sachet-#{Time.now}")
   end
 
   def to_s
     @lines
+  end
+
+  def cleanup
+    @tmp_package.close
+  end
+
+  def serve_package
+    # generates the files and serves it as a downloadable archive
+    Zip::ZipOutputStream.open(@tmp_package.path) do |z|
+      z.put_next_entry('.vimrc')
+      z.print(@lines.join("\n"))
+    end
+
+    @tmp_package.path
   end
 
   def process_params(params)
