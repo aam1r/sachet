@@ -1,10 +1,46 @@
 -
+  id: syntax
   brief: Syntax highlighting
+  syntax: syntax on
 -
+  id: line_numbers
   brief: Line numbers
+  syntax: set number
 -
-  brief: Automatically detect filetypes
--
+  id: mouse
   brief: Automatically enable mouse usage
+  syntax: set mouse=a
 -
+  id: spell
   brief: Spell checking
+  syntax: set spell
+  checked: true
+-
+  id: hlsearch
+  brief: Highlight search terms
+  syntax: set hlsearch
+-
+  id: showmatch
+  brief: Show matching brackets/parenthesis
+  syntax: set showmatch
+-
+  id: incsearch
+  brief: Find as you type search
+  syntax: set incsearch
+-
+  id: ignorecase
+  brief: Case insensitive search
+  syntax: set ignorecase
+-
+  id: wrap_lines
+  brief: Wrap long lines
+  syntax: nowrap
+-
+  id: autoindent
+  brief: Indent at the same level of the previous line
+  syntax: autoindent
+  checked: true
+-
+  id: expandtab
+  brief: Use spaces instead of tabs
+  syntax: expandtab

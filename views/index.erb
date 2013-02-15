@@ -1,15 +1,19 @@
 <h1>Welcome to sachet</h1>
 <hr />
 
-<div>
-  <h2>Configuration</h2>
-  <ul>
-    <% configuration.each do |config| %>
-      <li>
-        <input id="c1" type="checkbox">
-          <label for="c1"><%= config['brief'] %>
-        </label>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<form action='/download' method='post'>
+  <div>
+    <h2>Configuration</h2>
+    <ul>
+      <% configuration.each do |config| %>
+        <li>
+          <input name="<%= config['id'] %>" type="checkbox" 
+            <%= "checked" if config['checked'] %>>
+          <label><%= config['brief'] %></label>
+        </li>
+      <% end %>
+    </ul>
+
+    <input type="submit" value="Download">
+  </div>
+</form>
