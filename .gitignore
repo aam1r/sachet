@@ -1,3 +1,7 @@
+# sachet specific
+repos/
+
+# Ruby specific
 *.gem
 *.rbc
 .bundle
