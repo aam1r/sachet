@@ -34,13 +34,13 @@
 -
   id: wrap_lines
   brief: Wrap long lines
-  syntax: nowrap
+  syntax: set nowrap
 -
   id: autoindent
   brief: Indent at the same level of the previous line
-  syntax: autoindent
+  syntax: set autoindent
   checked: true
 -
   id: expandtab
   brief: Use spaces instead of tabs
-  syntax: expandtab
+  syntax: set expandtab
