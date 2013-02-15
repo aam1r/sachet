@@ -1,8 +1,9 @@
 class VimDownloadable
-  attr_accessor :lines, :options, :tmp_package
+  attr_accessor :lines, :options, :tmp_package, :packages
 
   def initialize(options)
     @lines = []
+    @packages = []
     @options = options
     @tmp_package = Tempfile.new("temp-sachet-#{Time.now}")
   end
@@ -16,6 +17,9 @@ class VimDownloadable
   end
 
   def serve_package
+    puts "Package selected:"
+    puts @packages.inspect
+
     # generates the files and serves it as a downloadable archive
     Zip::ZipOutputStream.open(@tmp_package.path) do |z|
       z.put_next_entry('.vimrc')
@@ -33,14 +37,24 @@ class VimDownloadable
     params.each do |param|
       key = param.first
 
+      # skip over empty text boxes
+      if param.last.empty?
+        next
+      end
+
       # append the vim config syntax
       if options_mapping.has_key?(key)
         config = options_mapping[key].first
         syntax = config['syntax']
 
         # replace tag with actual value
-        if config['input_type'] and config['tag']
+        if config.has_key?('input_type') and config.has_key?('tag')
           syntax[config['tag']] = params[key]
+        end
+
+        # keep track of packages
+        if config.has_key?('url')
+          @packages << syntax
         end
 
         @lines << syntax
