@@ -17,16 +17,33 @@ class VimDownloadable
   end
 
   def serve_package
-    puts "Package selected:"
-    puts @packages.inspect
-
     # generates the files and serves it as a downloadable archive
-    Zip::ZipOutputStream.open(@tmp_package.path) do |z|
-      z.put_next_entry('.vimrc')
-      z.print(@lines.join("\n"))
+    Zip::Archive.open(@tmp_package.path, Zip::CREATE) do |ar|
+      ar.add_buffer('.vimrc', @lines.join("\n"))
+
+      @packages.each do |package|
+        folder = _repo_folder(package['url'])
+
+        # recursively add directory
+        Dir.glob("repos/#{folder}/**/*").each do |src_path|
+          dest_path = src_path.gsub(/repos/, 'bundle')
+
+          if File.directory?(src_path)
+            ar.add_dir(dest_path)
+          else
+            ar.add_file(dest_path, src_path)
+          end
+        end
+      end
     end
 
     @tmp_package.path
+  end
+
+  def _repo_folder(url)
+    last_chunk = url.split('/').last
+    last_chunk['.git'] = ''
+    last_chunk
   end
 
   def process_params(params)
@@ -54,7 +71,7 @@ class VimDownloadable
 
         # keep track of packages
         if config.has_key?('url')
-          @packages << syntax
+          @packages << config
         end
 
         @lines << syntax

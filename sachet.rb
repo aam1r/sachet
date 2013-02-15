@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'yaml'
 require 'tempfile'
-require 'zip/zip'
+require 'zipruby'
 require './lib/vim_downloadable'
 
 CONFIGURATION = YAML.load_file('data/configuration.yaml')
