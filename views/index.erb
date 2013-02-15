@@ -1,18 +1,25 @@
 <h1>Welcome to sachet</h1>
 <hr />
 
+<% sections = {'Configuration' => configuration, 'Themes' => themes} %>
+
 <form action='/download' method='post'>
   <div>
-    <h2>Configuration</h2>
-    <ul>
-      <% configuration.each do |config| %>
-        <li>
-          <input name="<%= config['id'] %>" type="checkbox" 
-            <%= "checked" if config['checked'] %>>
-          <label><%= config['brief'] %></label>
-        </li>
-      <% end %>
-    </ul>
+    <% sections.each do |heading, data| %>
+      <h2><%= heading %></h2>
+      <ul>
+        <% data.each do |config| %>
+          <li>
+            <input 
+              name="<%= config['id'] %>" 
+              type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>"
+              <%= 'checked' if config['checked'] %>>
+
+            <label><%= config['brief'] %></label>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
 
     <input type="submit" value="Download">
   </div>

@@ -1,0 +1,5 @@
+-
+  id: theme1
+  brief: Sample theme
+  syntax: colorscheme elflord
+  input_type: radio
