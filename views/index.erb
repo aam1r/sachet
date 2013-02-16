@@ -48,8 +48,10 @@
                     </div>
 
                     <% [themes, plugins].each do |content| %>
-                      <%= content == themes ? '<div id="part2">' : '<div id="part3">' %>
-                      <%= erb :gallery, :locals => {:content => content} %>
+                      <% group = (content == themes) ? 'part2' : 'part3' %>
+
+                      <div id="<%= group %>">
+                        <%= erb :gallery, :locals => {:group => group, :content => content} %>
                       </div>
                     <% end %>
 

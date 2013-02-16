@@ -46,6 +46,8 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 #main-container .display ul { list-style-type: none; }
 #main-container .display input, label { display: inline; }
 #main-container .display .thumb { padding-left: 25px; padding-bottom: 10px; }
+#main-container .display .thumb input { display: inline; }
+#main-container .display .thumb .heading { display: inline; }
 #main-container .display #description { 
   float: right; 
   width: 350px;

@@ -3,6 +3,12 @@
   <% if count % 2 == 0 %><div class="row-fluid"><% end %>
 
   <div class="thumb span6">
+    <input 
+      name="<%= group  %>" 
+      id="<%= data['id'] %>" 
+      value="<%= data['id'] %>" 
+      type="<%= data['input_type'] ? data['input_type'] : 'checkbox' %>" <%= 'checked' if data['checked'] %>
+    >
     <p class="heading"><%= data['brief'] %></p>
     <img src="<%= data['thumbnail'] %>" width="320" height="206">
     <p class="desc"><%= data['description'] %></p>

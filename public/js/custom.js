@@ -60,7 +60,7 @@ $(document).ready(function() {
   $("#next_btn").on('click', nextButtonClick);
 
   /* Prettify the form */
-  $(":checkbox").uniform();
+  //$("input").uniform();
   $(".display label").hover(
     function(e) {
       var desc = $(e.target).parent().data('description');
