@@ -22,26 +22,31 @@
                   <%= erb :description %>
                 </div>
 
-                <div class="display">
-                  <div class="span7">
-                    <div id="part1">
-                      <%= erb :configuration, :locals => {:configuration => configuration} %>
-                    </div>
-
-                    <% [themes, plugins].each do |content| %>
-                      <% group = (content == themes) ? 'part2' : 'part3' %>
-
-                      <div id="<%= group %>">
-                        <%= erb :gallery, :locals => {:group => group, :content => content} %>
+                <form id="download_form" action="/download" method="post">
+                  <div class="display">
+                    <div class="span7">
+                      <div id="part1">
+                        <%= erb :configuration, :locals => {:configuration => configuration} %>
                       </div>
-                    <% end %>
 
-                    <div id="buttons">
-                      <a class="btn btn-primary" id="previous_btn">Previous</a>
-                      <a class="btn btn-primary" id="next_btn">Next</a>
+                      <% [themes, plugins].each do |content| %>
+                        <% group = (content == themes) ? 'part2' : 'part3' %>
+
+                        <div id="<%= group %>">
+                          <%= erb :gallery, :locals => {:group => group, :content => content} %>
+                        </div>
+                      <% end %>
+
+                      <div id="buttons">
+                        <a class="btn btn-primary" id="previous_btn">Previous</a>
+                        <a class="btn btn-primary" id="next_btn">Next</a>
+                        <a class="btn btn-success" id="download_btn">
+                          <i class="icon-download icon-large"></i> Download
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </form>
             </div>
         </div>
 

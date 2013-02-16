@@ -64,5 +64,6 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 #part2, #part3 { display: none; }
 
 /* Buttons */
+#download_btn { display: none; }
 #buttons { text-align: center; }
 #buttons a { margin: 10px; border-radius: 0; }

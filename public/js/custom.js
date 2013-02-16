@@ -62,20 +62,27 @@ function nextButtonClick() {
     // Re-enable 'Previous' button
     $("#previous_btn").removeClass('disabled');
 
-    // Disable 'Next' button if necessary
-    if (next_id == 3)
+    // Disable 'Next' button and enable 'Download' if necessary
+    if (next_id == 3) {
       $("#next_btn").addClass('disabled');
+      $("#download_btn").show();
+    }
 
     var next_part = $("#part" + next_id);
     updateDescription(next_part, current_part);
   }
 }
 
+function downloadButtonClick() {
+  $("#download_form").submit();
+}
+
 $(document).ready(function() {
   /* Previous/Next button handling */
   $("#previous_btn").addClass('disabled');
-  $("#previous_btn").on('click', previousButtonClick);
-  $("#next_btn").on('click', nextButtonClick);
+  $("#previous_btn").click(previousButtonClick);
+  $("#next_btn").click(nextButtonClick);
+  $("#download_btn").click(downloadButtonClick);
 
   /* Prettify the form */
   //$("input").uniform();
