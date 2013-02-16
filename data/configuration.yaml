@@ -9,7 +9,7 @@
 -
   id: mouse
   brief: Automatically enable mouse usage
-  syntax: set mouse=a
+  syntax: [set mouse=a, set mousehide]
 -
   id: spell
   brief: Spell checking
@@ -55,6 +55,6 @@
 -
   id: tabstop
   brief: Number of spaces per tab
-  syntax: set tabstop=%d
+  syntax: [set tabstop=%d, set shiftwidth=%d, set softtabstop=%d]
   tag: "%d"
   input_type: text

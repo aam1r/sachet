@@ -9,14 +9,18 @@ class VimDownloadable
   end
 
   def to_s
-    # require 'pry'
-    # binding.pry
-    vimrc = @lines.reject(&:nil?)
+    prepend = []
 
     # add mandatory pathogen code to enable ~/.vim/bundle functionality
-    vimrc.unshift('" Pathogen', 'call pathogen#infect()', 'call pathogen#helptags()', ' ')
+    prepend.push('" Pathogen', 'call pathogen#infect()', 'call pathogen#helptags()', ' ')
 
-    vimrc.join("\n")
+    # other misc. code for vimrc
+    prepend.push('set nocompatible')
+    prepend.push('set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)')
+    prepend.push('filetype plugin indent on', ' ')
+
+    vimrc = @lines.reject(&:nil?)
+    vimrc.unshift(prepend).join("\n")
   end
 
   def cleanup
@@ -71,9 +75,14 @@ class VimDownloadable
         config = options_mapping[key].first
         syntax = config['syntax']
 
-        # replace tag with actual value
+        # turn multiple statements into a single string
+        if syntax.is_a?(Array)
+          syntax = syntax.join("\n") + "\n"
+        end
+
+        # replace tags with actual value
         if config.has_key?('input_type') and config.has_key?('tag')
-          syntax[config['tag']] = params[key]
+          syntax.gsub!(config['tag'], params[key])
         end
 
         # keep track of packages

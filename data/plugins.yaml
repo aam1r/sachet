@@ -1,7 +1,11 @@
 -
   id: nerdtree
   brief: Nerdtree (a tree explorer plugin)
-  syntax: 
+  syntax: ['" Nerdtree', autocmd vimenter * NERDTree, let NERDTreeShowBookmarks=1, 
+           let NERDTreeChDirMode=0, let NERDTreeQuitOnOpen=1, 
+           let NERDTreeMouseMode=2, let NERDTreeShowHidden=1, 
+           "let NERDTreeIgnore=['\\.pyc','\\~$','\\.swo$','\\.swp$','\\.git','\\.hg','\\.svn','\\.bzr']",
+           let NERDTreeKeepTreeInNewTab=1, "let g:nerdtree_tabs_open_on_gui_startup=0"]
   checked: true
   url: git://github.com/scrooloose/nerdtree.git
 -
@@ -18,7 +22,7 @@
 -
   id: ctrlp
   brief: ctrlp (Fuzzy file, buffer, mru, tag, etc finder)
-  syntax: set runtimepath^=~/.vim/bundle/ctrlp.vim 
+  syntax: ['" ctrlp', set runtimepath^=~/.vim/bundle/ctrlp.vim]
   checked: true
   url: git://github.com/kien/ctrlp.vim.git
 -
