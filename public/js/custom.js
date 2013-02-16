@@ -8,7 +8,7 @@ function updateAndShowDescription(new_description) {
 
 $(document).ready(function() {
   $(":checkbox").uniform();
-  $(".theme-display label").hover(
+  $(".display label").hover(
     function(e) {
       var desc = $(e.target).parent().data('description');
       updateAndShowDescription(desc);
