@@ -60,6 +60,9 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 .description .lead.part1, .description .part2, .description .part3 { display: none; }
 .description hr { height: 1px; color: #aaaaaa; background-color: #aaaaaa; }
 
-/* Sections of walkthrough */
+/* Walkthrough */
 #part2, #part3 { display: none; }
 
+/* Buttons */
+#buttons { text-align: center; }
+#buttons a { margin: 10px; border-radius: 0; }
