@@ -1,19 +1,33 @@
 -
   id: wombat
-  brief: Wombat (dark-gray background with easy-on-the-eyes font colors)
+  brief: Wombat
+  description: Dark-gray background with easy-on-the-eyes font colors
   syntax: colorscheme wombat
   input_type: radio
   url: git://github.com/vim-scripts/Wombat.git
+  thumbnail: img/theme-wombat.png 
 -
   id: desert
-  brief: Desert (dark-background color scheme inspired by Santa Fe, New Mexico)
+  brief: Desert
+  description: Dark-background color scheme inspired by Santa Fe, New Mexico
   syntax: colorscheme desert
   input_type: radio
   checked: true
   url: git://github.com/fugalh/desert.vim.git
+  thumbnail: img/theme-desert.png 
 -
   id: solarized
-  brief: Solarized (precision colors for machines and people)
+  brief: Solarized (Dark)
+  description: Precision colors for machines and people
   syntax: colorscheme solarized
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
+  thumbnail: img/theme-solarized-dark.png 
+-
+  id: solarized
+  brief: Solarized (Light)
+  description: Precision colors for machines and people
+  syntax: colorscheme solarized
+  input_type: radio
+  url: git://github.com/altercation/vim-colors-solarized.git
+  thumbnail: img/theme-solarized-light.png 

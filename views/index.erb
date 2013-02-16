@@ -41,7 +41,7 @@
                   shrinking from toil and pain.</p>
                 </div>
 
-                <div class="theme-display">
+                <div class="display">
                   <div class="span7">
                     <div id="description">Hover over a label for a brief description</div>
                     <ul>
@@ -56,6 +56,20 @@
                           </li>
                         <% end %>
                     </ul>
+
+                    <% count = 0 %>
+                    <% themes.each do |theme| %>
+                      <% if count % 2 == 0 %><div class="row-fluid"><% end %>
+
+                      <div class="thumb span6">
+                        <p class="heading"><%= theme['brief'] %></p>
+                        <img src="<%= theme['thumbnail'] %>" width="320" height="206">
+                        <p class="desc"><%= theme['description'] %></p>
+                      </div>
+
+                      <% count += 1 %>
+                      <% if count % 2 == 0 %></div><% end %>
+                    <% end %>
                   </div>
                 </div>
             </div>
