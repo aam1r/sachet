@@ -2,59 +2,73 @@
   id: syntax
   brief: Syntax highlighting
   syntax: syntax on
+  description: Syntax highlighting enables Vim to show parts of the text in another font or color. Syntax highlighting automatically detects the filetype of the file and applies highlighting with rules specific to that language.
 -
   id: line_numbers
   brief: Line numbers
   syntax: set number
+  description: Display line numbers in the left-margin of the Vim editor. This allows for easier development workflow when working with any language.
 -
   id: mouse
   brief: Automatically enable mouse usage
   syntax: [set mouse=a, set mousehide]
+  description: Enable the use of the mouse (only works for certain terminals). To avoid distractions, the mouse cursor is automatically hidden while typing.
 -
   id: spell
   brief: Spell checking
   syntax: set spell
   checked: true
+  description: Performs spell checking to check for US English. Vim only checks words for spelling, there is no grammar check.
 -
   id: hlsearch
   brief: Highlight search terms
   syntax: set hlsearch
+  description: When searching for a pattern, this option will highlight all of the occurences in the current file. When you get bored looking at the highlighted matches, you can turn it off with 'set :nohlsearch'
 -
   id: showmatch
-  brief: Show matching brackets/parenthesis
+  brief: Show matching brackets
   syntax: set showmatch
+  description: Highlight the matching bracket and/or brace when the cursor is on a bracket.
 -
   id: incsearch
   brief: Find as you type search
   syntax: set incsearch
+  description: While typing a search command, show where the pattern, as it was typed so far, matches. The matched string is highlighted. If the pattern is invalid or not found, nothing is shown.
 -
   id: ignorecase
   brief: Case insensitive search
   syntax: set ignorecase
+  description: Ignore case in search patterns.
 -
   id: wrap_lines
   brief: Wrap long lines
   syntax: set nowrap
+  description: When on, lines longer than the width of the window will wrap and displaying continues on the next line. When off lines will not wrap and only part of long lines will be displayed. When the cursor is moved to a part that is not shown, the screen will scroll horizontally.
 -
   id: autoindent
   brief: Indent at the same level of the previous line
   syntax: set autoindent
   checked: true
+  description: Copy the indentation from the previous line, when starting a new line. It can be useful for structured text files, or when you want to control most of the indentation manually, without Vim interfering.
 -
   id: expandtab
   brief: Use spaces instead of tabs
   syntax: set expandtab
+  description: Whenever the TAB key is pressed, insert spaces instead of a TAB character.
 -
   id: long_history
   brief: Maintain a longer search and command history
   syntax: set history=1000
+  description: Vim maintains a default history of 20 previous commands. This option increases that limit to 1,000 previous commands.
 -
   id: cursorline
   brief: Highlight current line
   syntax: set cursorline
+  description: Highlights the current line in every window and update the highlight as the cursor moves.
 -
   id: tabstop
   brief: Number of spaces per tab
   syntax: [set tabstop=%d, set shiftwidth=%d, set softtabstop=%d]
   tag: "%d"
   input_type: text
+  description: Number of spaces that should be inserted instead of a TAB character.
