@@ -2,7 +2,7 @@
   id: wombat
   brief: Wombat
   description: Dark-gray background with easy-on-the-eyes font colors
-  syntax: colorscheme wombat
+  syntax: [set background=dark, colorscheme wombat]
   input_type: radio
   url: git://github.com/vim-scripts/Wombat.git
   thumbnail: img/theme-wombat.png 
@@ -10,7 +10,7 @@
   id: desert
   brief: Desert
   description: Dark-background color scheme inspired by Santa Fe, New Mexico
-  syntax: colorscheme desert
+  syntax: [set background=dark, colorscheme desert]
   input_type: radio
   checked: true
   url: git://github.com/fugalh/desert.vim.git
@@ -19,7 +19,7 @@
   id: solarized
   brief: Solarized (Dark)
   description: Precision colors for machines and people
-  syntax: colorscheme solarized
+  syntax: [set background=dark, colorscheme solarized]
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
   thumbnail: img/theme-solarized-dark.png 

@@ -15,7 +15,6 @@
   brief: surround
   description: Quoting/parenthesizing made simple
   syntax: 
-  checked: true
   url: git://github.com/tpope/vim-surround.git
   thumbnail: img/plugin-surround.png
 -
@@ -23,6 +22,7 @@
   brief: supertab
   description: Use the tab key to do all your insert completions
   syntax: 
+  checked: true
   url: git://github.com/ervandew/supertab.git
   thumbnail: img/plugin-supertab.png
 -

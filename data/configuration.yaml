@@ -2,11 +2,13 @@
   id: syntax
   brief: Syntax highlighting
   syntax: syntax on
+  checked: true
   description: Syntax highlighting enables Vim to show parts of the text in another font or color. Syntax highlighting automatically detects the filetype of the file and applies highlighting with rules specific to that language.
 -
   id: line_numbers
   brief: Line numbers
   syntax: set number
+  checked: true
   description: Display line numbers in the left-margin of the Vim editor. This allows for easier development workflow when working with any language.
 -
   id: mouse
@@ -17,12 +19,12 @@
   id: spell
   brief: Spell checking
   syntax: set spell
-  checked: true
   description: Performs spell checking to check for US English. Vim only checks words for spelling, there is no grammar check.
 -
   id: hlsearch
   brief: Highlight search terms
   syntax: set hlsearch
+  checked: true
   description: When searching for a pattern, this option will highlight all of the occurences in the current file. When you get bored looking at the highlighted matches, you can turn it off with 'set :nohlsearch'.
 -
   id: showmatch
@@ -59,9 +61,11 @@
   id: long_history
   brief: Maintain a longer search and command history
   syntax: set history=1000
+  checked: true
   description: Vim maintains a default history of 20 previous commands. This option increases that limit to 1,000 previous commands.
 -
   id: cursorline
   brief: Highlight current line
   syntax: set cursorline
+  checked: true
   description: Highlights the current line in every window and update the highlight as the cursor moves.
