@@ -65,10 +65,3 @@
   brief: Highlight current line
   syntax: set cursorline
   description: Highlights the current line in every window and update the highlight as the cursor moves.
--
-  id: tabstop
-  brief: Number of spaces per tab
-  syntax: [set tabstop=%d, set shiftwidth=%d, set softtabstop=%d]
-  tag: "%d"
-  input_type: text
-  description: Number of spaces that should be inserted instead of a TAB character.

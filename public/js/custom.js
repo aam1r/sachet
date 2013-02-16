@@ -13,23 +13,38 @@ function activePart() {
   }
 }
 
+function updateDescription(current_part, previous_part) {
+  var current_id = parseInt(current_part.attr('id').slice(-1));
+  var previous_id = parseInt(previous_part.attr('id').slice(-1));
+
+  // Hide welcome text
+  if (previous_id == 1)
+    $(".description .welcome").hide();
+
+  $(".description .part" + previous_id).hide();
+  $(".description .part" + current_id).show();
+}
+
 function previousButtonClick() {
   if ($("#previous_btn").hasClass('disabled'))
     return;
 
   var current_part = activePart();
-  var previous_part = parseInt(current_part.attr('id').slice(-1)) - 1;
+  var previous_id = parseInt(current_part.attr('id').slice(-1)) - 1;
 
-  if (previous_part > 0 && previous_part <= 3) {
+  if (previous_id > 0 && previous_id <= 3) {
     current_part.hide();
-    $("#part" + previous_part).show();
+    $("#part" + previous_id).show();
 
     // Re-enable 'Next' button
     $("#next_btn").removeClass('disabled');
 
     // Disable 'Previous' button if necessary
-    if (previous_part == 1)
+    if (previous_id == 1)
       $("#previous_btn").addClass('disabled');
+
+    var previous_part = $("#part" + previous_id);
+    updateDescription(previous_part, current_part);
   }
 }
 
@@ -38,18 +53,21 @@ function nextButtonClick() {
     return;
 
   var current_part = activePart();
-  var next_part = parseInt(current_part.attr('id').slice(-1)) + 1;
+  var next_id = parseInt(current_part.attr('id').slice(-1)) + 1;
 
-  if (next_part > 0 && next_part <= 3) {
+  if (next_id > 0 && next_id <= 3) {
     current_part.hide();
-    $("#part" + next_part).show();
+    $("#part" + next_id).show();
 
     // Re-enable 'Previous' button
     $("#previous_btn").removeClass('disabled');
 
     // Disable 'Next' button if necessary
-    if (next_part == 3)
+    if (next_id == 3)
       $("#next_btn").addClass('disabled');
+
+    var next_part = $("#part" + next_id);
+    updateDescription(next_part, current_part);
   }
 }
 

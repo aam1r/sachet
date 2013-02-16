@@ -20,6 +20,7 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 
 /* Grey rectangular box */
 #main-container {
+  min-height: 500px;
   border-top: 2px solid #bababa;
   border-bottom: 1px solid #bababa;
 
@@ -55,5 +56,10 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
   background-color: rgba(192, 192, 192, 0.4);
 }
 
+/* Description */
+.description .lead.part1, .description .part2, .description .part3 { display: none; }
+.description hr { height: 1px; color: #aaaaaa; background-color: #aaaaaa; }
+
 /* Sections of walkthrough */
 #part2, #part3 { display: none; }
+
