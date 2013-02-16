@@ -4,7 +4,7 @@
 
   <div class="thumb span6">
     <input 
-      name="<%= group  %>" 
+      name="<%= group == 'part2' ? 'part2' : data['id']  %>" 
       id="<%= data['id'] %>" 
       value="<%= data['id'] %>" 
       type="<%= data['input_type'] ? data['input_type'] : 'checkbox' %>" <%= 'checked' if data['checked'] %>

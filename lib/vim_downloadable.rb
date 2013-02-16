@@ -30,14 +30,17 @@ class VimDownloadable
   def serve_package
     # generates the files and serves it as a downloadable archive
     Zip::Archive.open(@tmp_package.path, Zip::CREATE) do |ar|
-      ar.add_buffer('.vimrc', to_s)
+      ar.add_buffer('vimrc', to_s)
+
+      # manually add pathogen
+      ar.add_file('vim/autoload/pathogen.vim', 'repos/vim-pathogen/autoload/pathogen.vim')
 
       @packages.each do |package|
         folder = _repo_folder(package['url'])
 
         # recursively add directory
         Dir.glob("repos/#{folder}/**/*").each do |src_path|
-          dest_path = src_path.gsub(/repos/, 'bundle')
+          dest_path = 'vim/' + src_path.gsub(/repos/, 'bundle')
 
           if File.directory?(src_path)
             ar.add_dir(dest_path)
