@@ -13,20 +13,12 @@ function activePart() {
   }
 }
 
-function previousPart(current) {
-  return parseInt(current.attr('id').slice(-1)) - 1;
-}
-
-function nextPart(current) {
-  return parseInt(current.attr('id').slice(-1)) + 1;
-}
-
-function previousButtonClick(e) {
+function previousButtonClick() {
   if ($("#previous_btn").hasClass('disabled'))
     return;
 
   var current_part = activePart();
-  var previous_part = previousPart(current_part);
+  var previous_part = parseInt(current_part.attr('id').slice(-1)) - 1;
 
   if (previous_part > 0 && previous_part <= 3) {
     current_part.hide();
@@ -46,7 +38,7 @@ function nextButtonClick() {
     return;
 
   var current_part = activePart();
-  var next_part = nextPart(current_part);
+  var next_part = parseInt(current_part.attr('id').slice(-1)) + 1;
 
   if (next_part > 0 && next_part <= 3) {
     current_part.hide();
