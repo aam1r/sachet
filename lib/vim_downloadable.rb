@@ -32,8 +32,9 @@ class VimDownloadable
     Zip::Archive.open(@tmp_package.path, Zip::CREATE) do |ar|
       ar.add_buffer('vimrc', to_s)
 
-      # manually add pathogen
+      # manually add pathogen and INSTRUCTIONS
       ar.add_file('vim/autoload/pathogen.vim', 'repos/vim-pathogen/autoload/pathogen.vim')
+      ar.add_file('INSTRUCTIONS.md')
 
       @packages.each do |package|
         folder = _repo_folder(package['url'])
