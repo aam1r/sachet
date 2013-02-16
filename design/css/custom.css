@@ -1,0 +1,7 @@
+.mid_grey { background-color:#E9E9E9; }
+.light_grey { background-color:red; }
+#header-container { 
+    height: 150px; 
+    background-image: url('../img/header.png');
+    background-size: cover;
+}
