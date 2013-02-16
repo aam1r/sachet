@@ -1,9 +1,4 @@
-h1, h2, body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif; 
-  font-weight: 300;
-}
-.mid_grey { background-color:#E9E9E9; }
-.light_grey { background-color:red; }
+h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif; font-weight: 300; }
 
 /* Header */
 #header-container { 
@@ -57,3 +52,6 @@ h1, h2, body {
   padding: 7px;
   background-color: rgba(192, 192, 192, 0.4);
 }
+
+/* Sections of walkthrough */
+#part2, #part3 { display: none; }

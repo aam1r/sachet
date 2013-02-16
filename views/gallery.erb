@@ -1,0 +1,13 @@
+<% count = 0 %>
+<% content.each do |data| %>
+  <% if count % 2 == 0 %><div class="row-fluid"><% end %>
+
+  <div class="thumb span6">
+    <p class="heading"><%= data['brief'] %></p>
+    <img src="<%= data['thumbnail'] %>" width="320" height="206">
+    <p class="desc"><%= data['description'] %></p>
+  </div>
+
+  <% count += 1 %>
+  <% if count % 2 == 0 %></div><% end %>
+<% end %>
