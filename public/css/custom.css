@@ -54,6 +54,6 @@ h1, h2, body {
 #main-container .theme-display #description { 
   float: right; 
   width: 350px;
-  background-color: yellow; 
-  display: none;
+  padding: 7px;
+  background-color: rgba(192, 192, 192, 0.4);
 }

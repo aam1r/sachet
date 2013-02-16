@@ -23,7 +23,7 @@
   id: hlsearch
   brief: Highlight search terms
   syntax: set hlsearch
-  description: When searching for a pattern, this option will highlight all of the occurences in the current file. When you get bored looking at the highlighted matches, you can turn it off with 'set :nohlsearch'
+  description: When searching for a pattern, this option will highlight all of the occurences in the current file. When you get bored looking at the highlighted matches, you can turn it off with 'set :nohlsearch'.
 -
   id: showmatch
   brief: Show matching brackets

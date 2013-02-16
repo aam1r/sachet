@@ -43,10 +43,10 @@
 
                 <div class="theme-display">
                   <div class="span7">
-                    <div id="description"></div>
+                    <div id="description">Hover over a label for a brief description</div>
                     <ul>
                         <% configuration.each do |config| %>
-                          <li>
+                          <li data-description="<%= config['description'] %>">
                             <input 
                               name="<%= config['id'] %>" 
                               id="<%= config['id'] %>" 
@@ -66,8 +66,23 @@
         <script src="js/jquery.uniform.js"></script>
 
         <script type="text/javascript">
+          function hideDescription() {
+            $('#description').hide();
+          }
+
+          function updateAndShowDescription(new_description) {
+            $('#description').text(new_description).show();
+          }
+
           $(document).ready(function() {
             $(":checkbox").uniform();
+            $(".theme-display label").hover(
+              function(e) { 
+                var desc = $(e.target).parent().data('description');
+                updateAndShowDescription(desc);
+              },
+              function() { hideDescription(); }
+            );
           });
         </script>
     </body>
