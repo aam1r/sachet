@@ -1,24 +1,74 @@
-<h1>sachet</h1>
-<hr />
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+        <link href="css/uniform.default.min.css" rel="stylesheet" media="screen">
+        <link href="css/custom.css" rel="stylesheet" media="screen">
+    </head>
 
-<form action='/download' method='post'>
-  <div>
-    <% sections.each do |heading, data| %>
-      <h2><%= heading %></h2>
-      <ul>
-        <% data.each do |config| %>
-          <li>
-            <input 
-              name="<%= config['id'] %>" 
-              type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>"
-              <%= 'checked' if config['checked'] %>>
+    <body>
+        <header>
+            <div class="container-fluid mid_grey" id="header-container">
+              <h1>sachet</h1>
+              <h2>Handcraft your development environment</h2>
+            </div>
+        </header>
 
-            <label><%= config['brief'] %></label>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
+        <div class="container-fluid" id="main-container">
+            <div class="row-fluid" id="main-container-row">
+                <div class="span5">
+                  <p class="lead">
+                    <i class="icon-magic icon-large"></i> Customize &rarr; Theme
+                  </p>
 
-    <input type="submit" value="Download">
-  </div>
-</form>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.</p>
+
+                  <p>On the other hand, we denounce with righteous indignation
+                  and dislike men who are so beguiled and demoralized by the
+                  charms of pleasure of the moment, so blinded by desire, that
+                  they cannot foresee the pain and trouble that are bound to
+                  ensue; and equal blame belongs to those who fail in their duty
+                  through weakness of will, which is the same as saying through
+                  shrinking from toil and pain.</p>
+                </div>
+
+                <div class="theme-display">
+                  <div class="span7">
+                    <div id="description"></div>
+                    <ul>
+                        <% configuration.each do |config| %>
+                          <li>
+                            <input 
+                              name="<%= config['id'] %>" 
+                              id="<%= config['id'] %>" 
+                              type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>" <%= 'checked' if config['checked'] %>
+                            >
+                            <label for="<%= config['id'] %>"><%= config['brief'] %></label>
+                          </li>
+                        <% end %>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.uniform.js"></script>
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $(":checkbox").uniform();
+          });
+        </script>
+    </body>
+</html>

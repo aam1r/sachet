@@ -9,9 +9,9 @@ THEMES = YAML.load_file('data/themes.yaml')
 PLUGINS = YAML.load_file('data/plugins.yaml')
 
 get '/' do
-  erb :index, :locals => {:sections => {'Configuration' => CONFIGURATION,
-                                        'Themes' => THEMES,
-                                        'Plugins' => PLUGINS}}
+  erb :index, :locals => {:configuration => CONFIGURATION,
+                          :themes => THEMES,
+                          :plugins => PLUGINS}
 end
 
 post '/download' do

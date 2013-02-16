@@ -46,6 +46,14 @@ h1, h2, body {
 
 #main-container #main-container-row { padding-top: 20px; }
 #main-container p.lead { font-size: 22pt; }
-#main-container .theme-display .thumb { padding-left: 25px; padding-bottom: 10px; }
 #main-container .theme-display .heading { font-size: 15pt; }
 #main-container .theme-display .desc { font-size: 10pt; }
+#main-container .theme-display ul { list-style-type: none; }
+#main-container .theme-display input, label { display: inline; }
+#main-container .theme-display .thumb { padding-left: 25px; padding-bottom: 10px; }
+#main-container .theme-display #description { 
+  float: right; 
+  width: 350px;
+  background-color: yellow; 
+  display: none;
+}
