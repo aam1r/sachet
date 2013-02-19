@@ -43,6 +43,9 @@ end
 def refresh()
   options = THEMES + PLUGINS
 
+  # Create directory if it doesn't exist yet
+  Dir.mkdir('repos') unless File.directory?('repos')
+
   options.each do |option|
     fetch_repo(option['url'])
   end
