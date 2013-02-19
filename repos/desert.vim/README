@@ -1,0 +1,13 @@
+I started with the evening colorscheme included in the distro, and tweaked a
+few colors to my liking.  Then I decided to do a major overhaul and give the
+whole thing a desert evening sort of feel.  I find it a very pleasing,
+easy-on-the-eyes theme.
+
+Screenshot: http://hans.fugal.net/vim/colors/desert.html
+
+Get the latest version at https://github.com/fugalh/desert.vim
+Put in ~/.vim/colors or (<your-vim-dir>\vimfiles\colors on Windows) and do
+:colorscheme desert
+
+I mostly don't maintain this anymore. Occasionally someone has a tweak
+suggestion - I recommend forking this and sending a pull request, or not.
