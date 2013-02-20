@@ -85,10 +85,10 @@ $(document).ready(function() {
   $("#download_btn").click(downloadButtonClick);
 
   /* Prettify the form */
-  //$("input").uniform();
+  $("input").uniform();
   $(".display label").hover(
     function(e) {
-      var desc = $(e.target).parent().data('description');
+      var desc = $(e.target).closest('li').data('description');
       updateAndShowDescription(desc);
     },
     function() { hideDescription(); }

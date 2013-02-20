@@ -1,13 +1,16 @@
 <div id="description">Hover over a label for a brief description</div>
+
 <ul>
   <% configuration.each do |config| %>
     <li data-description="<%= config['description'] %>">
-      <input 
-        name="<%= config['id'] %>" 
-        id="<%= config['id'] %>" 
-        type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>" <%= 'checked' if config['checked'] %>
-      >
-      <label for="<%= config['id'] %>"><%= config['brief'] %></label>
+      <label>
+        <input
+          name="<%= config['id'] %>"
+          id="<%= config['id'] %>"
+          type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>" <%= 'checked' if config['checked'] %>
+        >
+        <label for="<%= config['id'] %>"><%= config['brief'] %></label>
+      </label>
     </li>
   <% end %>
 </ul>
