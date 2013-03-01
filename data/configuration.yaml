@@ -69,3 +69,12 @@
   syntax: set cursorline
   checked: true
   description: Highlights the current line in every window and update the highlight as the cursor moves.
+-
+  id: tabtospaces
+  brief: Spaces for each tab character
+  syntax: [set expandtab, set shiftwidth=%d, set tabstop=%d, set softtabstop=%d]
+  tag: "%d"
+  description: Instead of using the tab character, use spaces
+  values: [2, 4]
+  default: 2
+  input_type: select

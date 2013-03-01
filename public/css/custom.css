@@ -1,13 +1,13 @@
 h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif; font-weight: 300; }
 
 /* Header */
-#header-container { 
-  height: 150px; 
+#header-container {
+  height: 150px;
   background-image: url('../img/header.png');
   background-size: cover;
 }
 #header-container h1, h2 { color: white; }
-#header-container h1 { 
+#header-container h1 {
   font-size: 50pt;
   margin-top: 45px;
 }
@@ -49,8 +49,8 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 #main-container .display .thumb { padding-left: 25px; padding-bottom: 10px; }
 #main-container .display .thumb input { display: inline; }
 #main-container .display .thumb .heading { display: inline; }
-#main-container .display #description { 
-  float: right; 
+#main-container .display #description {
+  float: right;
   width: 350px;
   padding: 7px;
   background-color: rgba(192, 192, 192, 0.4);
@@ -62,6 +62,9 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 
 /* Walkthrough */
 #part2, #part3 { display: none; }
+
+/* Form elements */
+#part1 select { width: auto; }
 
 /* Buttons */
 #download_btn { display: none; }
