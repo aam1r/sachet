@@ -3,7 +3,7 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 /* Header */
 #header-container {
   height: 150px;
-  background-image: url('../img/header.png');
+  background-image: url('../img/header.jpg');
   background-size: cover;
 }
 #header-container h1, h2 { color: white; }
