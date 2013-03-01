@@ -1,4 +1,4 @@
-h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif; font-weight: 300; }
+h1, h2, h3, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif; font-weight: 300; }
 
 /* Header */
 #header-container {
@@ -6,16 +6,24 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
   background-image: url('../img/header.jpg');
   background-size: cover;
 }
-#header-container h1, h2 { color: white; }
+#header-container h1, h2, h3 { color: white; }
 #header-container h1 {
   font-size: 50pt;
   margin-top: 45px;
 }
 #header-container h2 {
-  font-weight: 200;
   float: right;
   font-size: 16pt;
   margin-top: -35px;
+}
+#header-container h3 {
+  font-size: 13pt;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: -5px;
+}
+#header-container h3 a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Grey rectangular box */
@@ -70,3 +78,9 @@ h1, h2, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helv
 #download_btn { display: none; }
 #buttons { text-align: center; }
 #buttons a { margin: 10px; border-radius: 0; }
+
+/* Footer */
+footer div.container p {
+  padding: 10px;
+  text-align: center;
+}
