@@ -34,10 +34,13 @@ function previousButtonClick() {
 
   var current_part = activePart();
   var previous_id = parseInt(current_part.attr('id').slice(-1)) - 1;
+  var previous_selector = "#part" + previous_id;
 
   if (previous_id > 0 && previous_id <= 3) {
+    var previous_container = $(previous_selector);
+
     current_part.hide();
-    $("#part" + previous_id).show();
+    previous_container.show();
 
     // Re-enable 'Next' button
     $("#next_btn").removeClass('disabled');
@@ -46,8 +49,8 @@ function previousButtonClick() {
     if (previous_id == 1)
       $("#previous_btn").addClass('disabled');
 
-    var previous_part = $("#part" + previous_id);
-    updateDescription(previous_part, current_part);
+    updateDescription(previous_container, current_part);
+    _gaq.push(['_trackPageview', previous_selector]);
   }
 }
 
@@ -57,10 +60,13 @@ function nextButtonClick() {
 
   var current_part = activePart();
   var next_id = parseInt(current_part.attr('id').slice(-1)) + 1;
+  var next_selector = "#part" + next_id;
 
   if (next_id > 0 && next_id <= 3) {
+    var next_container = $(next_selector);
+
     current_part.hide();
-    $("#part" + next_id).show();
+    next_container.show();
 
     // Re-enable 'Previous' button
     $("#previous_btn").removeClass('disabled');
@@ -71,13 +77,16 @@ function nextButtonClick() {
       $("#download_btn").show();
     }
 
-    var next_part = $("#part" + next_id);
-    updateDescription(next_part, current_part);
+    updateDescription(next_container, current_part);
+    _gaq.push(['_trackPageview', next_selector]);
   }
 }
 
 function downloadButtonClick() {
   $("#download_form").submit();
+
+  var selected = $("input:checked").map(function() { return this.id; });
+  _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected]);
 }
 
 $(document).ready(function() {

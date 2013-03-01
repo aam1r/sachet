@@ -14,20 +14,20 @@
   input_type: radio
   checked: true
   url: git://github.com/fugalh/desert.vim.git
-  thumbnail: img/theme-desert.png 
+  thumbnail: img/theme-desert.png
 -
-  id: solarized
+  id: solarized_dark
   brief: Solarized (Dark)
   description: Precision colors for machines and people
   syntax: [set background=dark, colorscheme solarized]
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
-  thumbnail: img/theme-solarized-dark.png 
+  thumbnail: img/theme-solarized-dark.png
 -
-  id: solarized
+  id: solarized_light
   brief: Solarized (Light)
   description: Precision colors for machines and people
   syntax: colorscheme solarized
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
-  thumbnail: img/theme-solarized-light.png 
+  thumbnail: img/theme-solarized-light.png
