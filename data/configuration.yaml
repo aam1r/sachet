@@ -53,11 +53,6 @@
   checked: true
   description: Copy the indentation from the previous line, when starting a new line. It can be useful for structured text files, or when you want to control most of the indentation manually, without Vim interfering.
 -
-  id: expandtab
-  brief: Use spaces instead of tabs
-  syntax: set expandtab
-  description: Whenever the TAB key is pressed, insert spaces instead of a TAB character.
--
   id: long_history
   brief: Maintain a longer search and command history
   syntax: set history=1000
