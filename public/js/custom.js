@@ -1,12 +1,5 @@
-var MIN_WIDTH_FOR_DESCRIPTION = 1150;
-
-function hideDescription() {
-  $('#description').hide();
-}
-
 function updateAndShowDescription(new_description) {
-  if ($(document).width() > MIN_WIDTH_FOR_DESCRIPTION)
-    $('#description').text(new_description).show();
+  $('#description p').text(new_description).show();
 }
 
 function activePart() {
@@ -99,15 +92,10 @@ $(document).ready(function() {
   /* Prettify the form */
   $("input").uniform();
 
-  /* Description box hiding/displaying */
-  if ($(document).width() < MIN_WIDTH_FOR_DESCRIPTION)
-    hideDescription();
-
   $(".display label").hover(
     function(e) {
       var desc = $(e.target).closest('li').data('description');
       updateAndShowDescription(desc);
-    },
-    function() { hideDescription(); }
+    }
   );
 });

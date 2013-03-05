@@ -58,9 +58,8 @@ h1, h2, h3, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "
 #main-container .display .thumb input { display: inline; }
 #main-container .display .thumb .heading { display: inline; }
 #main-container .display #description {
-  float: right;
-  width: 350px;
-  padding: 7px;
+  padding: 7px 0 0 7px;
+  vertical-align: center;
   background-color: rgba(192, 192, 192, 0.4);
 }
 

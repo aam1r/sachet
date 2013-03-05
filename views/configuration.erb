@@ -1,24 +1,30 @@
-<div id="description">Hover over a label for a brief description</div>
-
-<ul>
-  <% configuration.each do |config| %>
-    <li data-description="<%= config['description'] %>">
-      <label>
-        <% if config['input_type'] == 'select' %>
-          <select id="<%= config['id'] %>" name="<%= config['id'] %>">
-            <% config['values'].each do |value| %>
-              <option value="<%= value %>"><%= value %></option>
+<div class="row-fluid">
+  <div class="span7">
+    <ul>
+      <% configuration.each do |config| %>
+        <li data-description="<%= config['description'] %>">
+          <label>
+            <% if config['input_type'] == 'select' %>
+              <select id="<%= config['id'] %>" name="<%= config['id'] %>">
+                <% config['values'].each do |value| %>
+                  <option value="<%= value %>"><%= value %></option>
+                <% end %>
+              </select>
+            <% else %>
+              <input
+                name="<%= config['id'] %>"
+                id="<%= config['id'] %>"
+                type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>" <%= 'checked' if config['checked'] %>
+              >
             <% end %>
-          </select>
-        <% else %>
-          <input
-            name="<%= config['id'] %>"
-            id="<%= config['id'] %>"
-            type="<%= config['input_type'] ? config['input_type'] : 'checkbox' %>" <%= 'checked' if config['checked'] %>
-          >
-        <% end %>
-        <label for="<%= config['id'] %>"><%= config['brief'] %></label>
-      </label>
-    </li>
-  <% end %>
-</ul>
+            <label for="<%= config['id'] %>"><%= config['brief'] %></label>
+          </label>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="span5" id="description">
+    <p>Hover over a label for a brief description</p>
+  </div>
+</div>
