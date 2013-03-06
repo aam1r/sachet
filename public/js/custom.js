@@ -79,7 +79,7 @@ function downloadButtonClick() {
   $("#download_form").submit();
 
   var selected = $("input:checked").map(function() { return this.id; });
-  _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected]);
+  _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected.toString()]);
 }
 
 $(document).ready(function() {
