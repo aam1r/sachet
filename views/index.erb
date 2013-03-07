@@ -15,7 +15,7 @@
         <header>
             <div class="container-fluid mid_grey" id="header-container">
               <div class="row-fluid">
-                <div class="span7" id="logo">
+                <div class="span6" id="logo">
                   <h1>sachet</h1>
                   <h3>
                     <a href="https://github.com/aam1r/sachet" target="_blank">
@@ -24,8 +24,13 @@
                   </h3>
                 </div>
 
-                <div class="span5">
+                <div class="span6" id="meta">
                   <h2>Handcraft your development environment</h2>
+                  <ul id="social-buttons">
+                    <li><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fyoursachet.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font=segoe+ui&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></li>
+                    <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://yoursachet.com" data-text="sachet - Handcraft your Vim environment online">Tweet</a></li>
+                    <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://yoursachet.com"></div></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -78,5 +83,16 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.uniform.js"></script>
         <script src="js/custom.js"></script>
+        <script>
+          /* Twitter button */
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+          /* Google+ button */
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
     </body>
 </html>
