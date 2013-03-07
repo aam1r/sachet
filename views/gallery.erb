@@ -3,17 +3,31 @@
   <% if count % 2 == 0 %><div class="row-fluid"><% end %>
 
   <div class="thumb span6">
-    <label>
-      <input
-        name="<%= group == 'part2' ? 'part2' : data['id']  %>"
-        id="<%= data['id'] %>"
-        value="<%= data['id'] %>"
-        type="<%= data['input_type'] ? data['input_type'] : 'checkbox' %>" <%= 'checked' if data['checked'] %>
-      >
-      <label class="heading" for="<%= data['id'] %>"><%= data['brief'] %></label>
-    </label>
-    <img src="<%= data['thumbnail'] %>" width="320" height="206">
-    <p class="desc"><%= data['description'] %></p>
+    <div class="row">
+      <div class="span12">
+        <label>
+          <input
+            name="<%= group == 'part2' ? 'part2' : data['id']  %>"
+            id="<%= data['id'] %>"
+            value="<%= data['id'] %>"
+            type="<%= data['input_type'] ? data['input_type'] : 'checkbox' %>" <%= 'checked' if data['checked'] %>
+          >
+          <label class="heading" for="<%= data['id'] %>"><%= data['brief'] %></label>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span12">
+        <img src="<%= data['thumbnail'] %>" width="320" height="206">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span12">
+        <p class="desc"><%= data['description'] %></p>
+      </div>
+    </div>
   </div>
 
   <% count += 1 %>
