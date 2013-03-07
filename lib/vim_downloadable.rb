@@ -36,7 +36,7 @@ class VimDownloadable
       ar.add_dir('vim')
       ar.add_dir('vim/autoload')
       ar.add_file('vim/autoload/pathogen.vim', 'repos/vim-pathogen/autoload/pathogen.vim')
-      ar.add_file('INSTRUCTIONS.md')
+      ar.add_file('INSTRUCTIONS.txt')
 
       @packages.each do |package|
         folder = _repo_folder(package['url'])
