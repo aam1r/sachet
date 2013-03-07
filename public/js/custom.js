@@ -76,10 +76,10 @@ function nextButtonClick() {
 }
 
 function downloadButtonClick() {
-  $("#download_form").submit();
+  var selected = $.map($("input:checked"), function(el) { return el.id; }).toString()
+  _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected]);
 
-  var selected = $("input:checked").map(function() { return this.id; });
-  _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected.toString()]);
+  $("#download_form").submit();
 }
 
 $(document).ready(function() {
