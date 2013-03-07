@@ -58,4 +58,4 @@ h1, h2, h3, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "
 #buttons a { margin: 10px; border-radius: 0; }
 
 /* Footer */
-footer div.container p { padding: 10px; text-align: center; }
+footer div.container { padding: 10px; text-align: center; }
