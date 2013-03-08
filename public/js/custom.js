@@ -37,10 +37,13 @@ function previousButtonClick() {
 
     // Re-enable 'Next' button
     $("#next_btn").removeClass('disabled');
+    $("#next_btn").show();
 
     // Disable 'Previous' button if necessary
-    if (previous_id == 1)
-      $("#previous_btn").addClass('disabled');
+    if (previous_id == 1) {
+      $("#previous_btn").addClass('disabled'); 
+      $("#previous_btn").hide();
+    }
 
     updateDescription(previous_container, current_part);
     mixpanel.track('Pageview', {'selector': previous_selector});
@@ -63,10 +66,13 @@ function nextButtonClick() {
 
     // Re-enable 'Previous' button
     $("#previous_btn").removeClass('disabled');
+    $("#previous_btn").show();
+
 
     // Disable 'Next' button and enable 'Download' if necessary
     if (next_id == 3) {
       $("#next_btn").addClass('disabled');
+      $("#next_btn").hide();
       $("#download_btn").show();
     }
 
@@ -97,6 +103,7 @@ $(document).ready(function() {
 
   /* Previous/Next button handling */
   $("#previous_btn").addClass('disabled');
+  $("#previous_btn").hide();
   $("#previous_btn").click(previousButtonClick);
   $("#next_btn").click(nextButtonClick);
   $("#download_btn").click(downloadButtonClick);
