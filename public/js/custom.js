@@ -43,7 +43,7 @@ function previousButtonClick() {
       $("#previous_btn").addClass('disabled');
 
     updateDescription(previous_container, current_part);
-    _gaq.push(['_trackPageview', previous_selector]);
+    mixpanel.track('Pageview', {'selector': previous_selector});
   }
 }
 
@@ -71,18 +71,16 @@ function nextButtonClick() {
     }
 
     updateDescription(next_container, current_part);
-    _gaq.push(['_trackPageview', next_selector]);
+    mixpanel.track('Pageview', {'selector': next_selector});
   }
 }
 
 function downloadButtonClick() {
-  var selected = $.map($("input:checked"), function(el) { return el.id; }).toString();
-  _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected]);
+  var selected = {};
+  $.each($("input:checked"), function(k, v) { selected[v.id] = true; })
 
-  // Wait 300ms before submitting form to allow event to get tracked
-  setTimeout(function() {
-    $("#download_form").submit();
-  }, 300);
+  mixpanel.track_forms("#download_form", "Download", selected);
+  console.log(selected);
 }
 
 $(document).ready(function() {
