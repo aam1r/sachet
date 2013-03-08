@@ -93,7 +93,7 @@ function downloadButtonClick() {
 }
 
 $(document).ready(function() {
-  mixpanel.track('Pageview', {'selector': '#page1'});
+  mixpanel.track('Pageview', {'selector': '#part1'});
 
   /* Previous/Next button handling */
   $("#previous_btn").addClass('disabled');
