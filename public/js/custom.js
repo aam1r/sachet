@@ -77,9 +77,12 @@ function nextButtonClick() {
 
 function downloadButtonClick() {
   var selected = $.map($("input:checked"), function(el) { return el.id; }).toString();
-
   _gaq.push(['_trackEvent', 'sachet', 'walkthrough', 'download', selected]);
-  _gaq.push(function() { $("#download_form").submit() });
+
+  // Wait 300ms before submitting form to allow event to get tracked
+  setTimeout(function() {
+    $("#download_form").submit();
+  }, 300);
 }
 
 $(document).ready(function() {
