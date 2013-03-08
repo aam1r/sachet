@@ -76,11 +76,20 @@ function nextButtonClick() {
 }
 
 function downloadButtonClick() {
+  var call_success = false;
   var selected = {};
   $.each($("input:checked"), function(k, v) { selected[v.id] = true; })
 
-  mixpanel.track_forms("#download_form", "Download", selected);
-  console.log(selected);
+  mixpanel.track("Download", selected, function() {
+    call_success = true;
+    $("#download_form").submit();
+  });
+
+  // Submit form even if the Mixpanel event tracking failed
+  setTimeout(function() {
+    if (!call_success)
+      $("#download_form").submit();
+  }, 1000);
 }
 
 $(document).ready(function() {
