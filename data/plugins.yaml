@@ -2,9 +2,9 @@
   id: nerdtree
   brief: Nerdtree
   description: A tree explorer plugin
-  syntax: ['" Nerdtree', autocmd vimenter * NERDTree, let NERDTreeShowBookmarks=1, 
-           let NERDTreeChDirMode=0, let NERDTreeQuitOnOpen=1, 
-           let NERDTreeMouseMode=2, let NERDTreeShowHidden=1, 
+  syntax: ['" Nerdtree', autocmd vimenter * NERDTree, let NERDTreeShowBookmarks=1,
+           let NERDTreeChDirMode=0, let NERDTreeQuitOnOpen=1,
+           let NERDTreeMouseMode=2, let NERDTreeShowHidden=1,
            "let NERDTreeIgnore=['\\.pyc','\\~$','\\.swo$','\\.swp$','\\.git','\\.hg','\\.svn','\\.bzr']",
            let NERDTreeKeepTreeInNewTab=1, "let g:nerdtree_tabs_open_on_gui_startup=0", ' ']
   checked: true
@@ -14,14 +14,14 @@
   id: surround
   brief: surround
   description: Quoting/parenthesizing made simple
-  syntax: 
+  syntax:
   url: git://github.com/tpope/vim-surround.git
   thumbnail: img/plugin-surround.png
 -
   id: supertab
   brief: supertab
   description: Use the tab key to do all your insert completions
-  syntax: 
+  syntax:
   checked: true
   url: git://github.com/ervandew/supertab.git
   thumbnail: img/plugin-supertab.png
@@ -29,7 +29,7 @@
   id: ctrlp
   brief: ctrlp
   description: Fuzzy file, buffer, mru, tag, etc finder
-  syntax: ['" ctrlp', set runtimepath^=~/.vim/bundle/ctrlp.vim, ' ']
+  syntax:
   checked: true
   url: git://github.com/kien/ctrlp.vim.git
   thumbnail: img/plugin-ctrlp.png
@@ -37,6 +37,6 @@
   id: fugitive
   brief: fugitive
   description: A Git wrapper so awesome, it should be illegal
-  syntax: 
+  syntax:
   url: git://github.com/tpope/vim-fugitive.git
   thumbnail: img/plugin-fugitive.png
