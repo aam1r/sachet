@@ -11,11 +11,13 @@ class VimDownloadable
   def to_s
     prepend = []
 
+    # drop strict backwards compatibility with vi in favor of better features
+    prepend.push('set nocompatible', '')
+
     # add mandatory pathogen code to enable ~/.vim/bundle functionality
     prepend.push('" Pathogen', 'call pathogen#infect()', 'call pathogen#helptags()', ' ')
 
     # other misc. code for vimrc
-    prepend.push('set nocompatible')
     prepend.push('set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)')
     prepend.push('filetype plugin indent on', ' ')
 
