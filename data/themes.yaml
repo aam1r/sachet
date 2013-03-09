@@ -31,3 +31,19 @@
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
   thumbnail: img/theme-solarized-light.png
+-
+  id: tomorrow_night
+  brief: Tomorrow Night
+  description: Pastel colors and sensible syntax highlighting
+  syntax: colorscheme Tomorrow-Night
+  input_type: radio
+  url:  git://github.com/chriskempson/vim-tomorrow-theme.git
+  thumbnail: img/theme-tomorrow-night.png
+-
+  id: tomorrow
+  brief: Tomorrow
+  description: Pastel colors and sensible syntax highlighting
+  syntax: colorscheme Tomorrow
+  input_type: radio
+  url: git://github.com/chriskempson/vim-tomorrow-theme.git
+  thumbnail: img/theme-tomorrow.png
