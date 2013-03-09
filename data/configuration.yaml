@@ -67,9 +67,9 @@
 -
   id: clipboard
   brief: Use system clipboard
-  syntax: set clipboard=unnamedplus
+  syntax: [if has("unnamedplus"), '  set clipboard=unnamedplus', elseif has("clipboard"), '  set clipboard=unnamed', endif]
   checked: false
-  description: Copy (or 'yank') directly to your system's clipboard so that you can easily paste copied items into other applications. Items copied from elsewhere can also be pasted directly into vim. (Requires Vim version 7.3.74 or later)
+  description: Copy (or 'yank') directly to your system's clipboard so that you can easily paste copied items into other applications. Items copied from elsewhere can also be pasted directly into vim. (Requires vim-gtk on Linux, and MacVim on OSX)
 -
   id: tabtospaces
   brief: Spaces for each tab character
