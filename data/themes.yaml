@@ -5,7 +5,7 @@
   syntax: [set background=dark, colorscheme wombat]
   input_type: radio
   url: git://github.com/vim-scripts/Wombat.git
-  thumbnail: img/theme-wombat.png 
+  thumbnail: img/theme-wombat.png
 -
   id: desert
   brief: Desert
@@ -37,7 +37,7 @@
   description: Pastel colors and sensible syntax highlighting
   syntax: colorscheme Tomorrow-Night
   input_type: radio
-  url:  git://github.com/chriskempson/vim-tomorrow-theme.git
+  url: git://github.com/chriskempson/vim-tomorrow-theme.git
   thumbnail: img/theme-tomorrow-night.png
 -
   id: tomorrow
