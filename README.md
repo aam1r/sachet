@@ -18,4 +18,4 @@ You can then access sachet at `http://localhost:4567`.
 
 Feel free to fork the repo, send pull requests and/or open any issues that you may come across.
 
-When sending a Pull Request, make sure to add yourself to the AUTHORS file.
+When sending a Pull Request, make sure to add yourself to the [AUTHORS](AUTHORS.md) file.
