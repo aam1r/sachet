@@ -3,10 +3,10 @@ h1, h2, h3, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "
 /* Header */
 #header-container { height: 150px; background-image: url('../img/header.jpg'); background-size: cover; }
 #header-container h1, h2, h3 { color: white; }
+#header-container h1 a, h3 a { color: white; text-decoration: none; }
 #header-container h1 { font-size: 50pt; }
 #header-container h2 { font-size: 16pt; }
 #header-container h3 { font-size: 13pt; color: rgba(255, 255, 255, 0.8); }
-#header-container h3 a { color: white; text-decoration: none; }
 #header-container #logo { padding-top: 25px; }
 #header-container #meta { text-align: right; padding-top: 35px; }
 #header-container #social-buttons { list-style-type: none; margin-left: 0; margin-top: -10px; }
