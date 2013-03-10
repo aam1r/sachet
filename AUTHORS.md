@@ -9,5 +9,6 @@
 ## Contributors
 
 * James Anderson ([@jamesaanderson](https://github.com/jamesaanderson))
-* cnu ([@cnu](https://github.com/cnu))
 * tylernisonoff ([@tylernisonoff](https://github.com/tylernisonoff))
+* cnu ([@cnu](https://github.com/cnu))
+* Thomas Boyt ([@thomasboyt](https://github.com/thomasboyt))
