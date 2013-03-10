@@ -12,12 +12,10 @@ bundle install
 mkdir repos; ruby -rubygems refresh_repos.rb
 ruby -rubygems sachet.rb
 ```
-You can then access sachet at `http://localhost:4567`. 
+You can then access sachet at `http://localhost:4567`.
 
 ## Contributions
 
 Feel free to fork the repo, send pull requests and/or open any issues that you may come across.
 
-## Credits
-
-* [spf13-vim](http://vim.spf13.com/) - Several parts of the .vimrc file were taken from the spf13-vim distribution. @spf13, thank you for creating such an amazing vim resource.
+When sending a Pull Request, make sure to add yourself to the AUTHORS file.
