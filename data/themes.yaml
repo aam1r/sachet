@@ -5,6 +5,7 @@
   syntax: [set background=dark, colorscheme wombat]
   input_type: radio
   url: git://github.com/vim-scripts/Wombat.git
+  web: http://www.vim.org/scripts/script.php?script_id=1778
   thumbnail: img/theme-wombat.png
 -
   id: desert
@@ -14,6 +15,7 @@
   input_type: radio
   checked: true
   url: git://github.com/fugalh/desert.vim.git
+  web: http://www.vim.org/scripts/script.php?script_id=105
   thumbnail: img/theme-desert.png
 -
   id: solarized_dark
