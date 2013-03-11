@@ -9,6 +9,7 @@
            let NERDTreeKeepTreeInNewTab=1, "let g:nerdtree_tabs_open_on_gui_startup=0", ' ']
   checked: true
   url: git://github.com/scrooloose/nerdtree.git
+  web: https://github.com/scrooloose/nerdtree
   thumbnail: img/plugin-nerdtree.png
 -
   id: surround
@@ -16,6 +17,7 @@
   description: Quoting/parenthesizing made simple
   syntax:
   url: git://github.com/tpope/vim-surround.git
+  web: https://github.com/tpope/vim-surround
   thumbnail: img/plugin-surround.png
 -
   id: supertab
@@ -24,6 +26,7 @@
   syntax:
   checked: true
   url: git://github.com/ervandew/supertab.git
+  web: https://github.com/ervandew/supertab
   thumbnail: img/plugin-supertab.png
 -
   id: ctrlp
@@ -32,6 +35,7 @@
   syntax:
   checked: true
   url: git://github.com/kien/ctrlp.vim.git
+  web: https://github.com/kien/ctrlp.vim
   thumbnail: img/plugin-ctrlp.png
 -
   id: fugitive
@@ -39,4 +43,5 @@
   description: A Git wrapper so awesome, it should be illegal
   syntax:
   url: git://github.com/tpope/vim-fugitive.git
+  web: https://github.com/tpope/vim-fugitive
   thumbnail: img/plugin-fugitive.png
