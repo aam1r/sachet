@@ -12,3 +12,4 @@
 * tylernisonoff ([@tylernisonoff](https://github.com/tylernisonoff))
 * cnu ([@cnu](https://github.com/cnu))
 * Thomas Boyt ([@thomasboyt](https://github.com/thomasboyt))
+* Suan-Aik Yeo ([@suan](https://github.com/suan))
