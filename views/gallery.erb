@@ -27,6 +27,9 @@
     <div class="row">
       <div class="span12">
         <p class="desc"><%= data['description'] %></p>
+        <% if data.has_key? 'web' %>
+          <p class="desc"><a href="<%= data['web'] %>">Learn more</a></p>
+        <% end %>
       </div>
     </div>
   </div>

@@ -22,6 +22,7 @@
   syntax: [set background=dark, colorscheme solarized]
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
+  web: http://ethanschoonover.com/solarized
   thumbnail: img/theme-solarized-dark.png
 -
   id: solarized_light
@@ -30,6 +31,7 @@
   syntax: colorscheme solarized
   input_type: radio
   url: git://github.com/altercation/vim-colors-solarized.git
+  web: http://ethanschoonover.com/solarized
   thumbnail: img/theme-solarized-light.png
 -
   id: tomorrow_night
@@ -38,6 +40,7 @@
   syntax: colorscheme Tomorrow-Night
   input_type: radio
   url: git://github.com/chriskempson/vim-tomorrow-theme.git
+  web: https://github.com/chriskempson/tomorrow-theme
   thumbnail: img/theme-tomorrow-night.png
 -
   id: tomorrow
@@ -46,4 +49,5 @@
   syntax: colorscheme Tomorrow
   input_type: radio
   url: git://github.com/chriskempson/vim-tomorrow-theme.git
+  web: https://github.com/chriskempson/tomorrow-theme
   thumbnail: img/theme-tomorrow.png
