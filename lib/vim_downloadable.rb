@@ -34,11 +34,12 @@ class VimDownloadable
     Zip::Archive.open(@tmp_package.path, Zip::CREATE) do |ar|
       ar.add_buffer('vimrc', to_s)
 
-      # manually add pathogen and INSTRUCTIONS
+      # manually add pathogen, INSTRUCTIONS and install.sh
       ar.add_dir('vim')
       ar.add_dir('vim/autoload')
       ar.add_file('vim/autoload/pathogen.vim', 'repos/vim-pathogen/autoload/pathogen.vim')
       ar.add_file('INSTRUCTIONS.txt')
+      ar.add_file('install.sh')
 
       @packages.each do |package|
         folder = _repo_folder(package['url'])

@@ -1,8 +1,15 @@
-Instructions
+INSTRUCTIONS
 ------------
-1. Copy the file `vimrc` and save it as `~/.vimrc`
-2. Copy the folder `vim` and save it as `~/.vim/`
 
-Once you are done copying, restart your vim to see your new environment.
+OS X and Linux:
+  * Run install.sh from the current directory
+  * Overwrite the existing .vimrc file and .vim folder
+
+Windows:
+  * Copy vimrc and vim to the appropriate locations
+  * Rename vimrc and vim to the necessary filenames
+
+Once you have completed the above instructions, restart all Vim instances to see
+your new environment.
 
 Thank you for using sachet.
