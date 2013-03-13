@@ -42,6 +42,7 @@ h1, h2, h3, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "
 #main-container .display ul { list-style-type: none; }
 #main-container .display input, label { display: inline; }
 #main-container .display .thumb { padding-left: 25px; padding-bottom: 10px; }
+#main-container .display .thumb .row p.desc { padding-right: 10px; }
 #main-container .display .thumb input { display: inline; }
 #main-container .display .thumb .heading { display: inline; }
 #main-container .display #description { padding: 7px 7px 0 7px; vertical-align: center; background-color: rgba(192, 192, 192, 0.4); }
@@ -52,6 +53,7 @@ h1, h2, h3, body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "
 
 /* Walkthrough */
 #part2, #part3 { display: none; }
+#part2 .row-fluid, #part3 .row-fluid { padding-top: 20px; }
 
 /* Form elements */
 #part1 select { width: auto; }
