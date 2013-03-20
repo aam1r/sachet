@@ -2,7 +2,7 @@
   id: nerdtree
   brief: Nerdtree
   description: A tree explorer plugin
-  syntax: ['" Nerdtree', autocmd vimenter * NERDTree, let NERDTreeShowBookmarks=1,
+  syntax: ['" Nerdtree', autocmd VimEnter * NERDTree, autocmd VimEnter * wincmd p, let NERDTreeShowBookmarks=1,
            let NERDTreeChDirMode=0, let NERDTreeQuitOnOpen=0,
            let NERDTreeMouseMode=2, let NERDTreeShowHidden=1,
            "let NERDTreeIgnore=['\\.pyc','\\~$','\\.swo$','\\.swp$','\\.git','\\.hg','\\.svn','\\.bzr']",
