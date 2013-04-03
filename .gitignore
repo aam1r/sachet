@@ -19,3 +19,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# Python specific
+env/
