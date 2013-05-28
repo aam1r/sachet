@@ -12,37 +12,27 @@ sachet__install_cwd="$(pwd)"
 
 # check if .vimrc already exists
 if [ -f "$sachet__install_home"/.vimrc ]; then
-  while true; do
-    read -p "~/.vimrc already exists -- Overwrite? (y/n) " choice
+  echo "Moving your ~/.vimrc to ~/.vimrc.old"
+  mv "$sachet__install_home"/.vimrc "$sachet__install_home"/.vimrc.old
 
-    case "$choice" in
-      y|Y ) cp -f "$sachet__install_cwd"/vimrc "$sachet__install_home"/.vimrc; break;;
-      n|N ) exit;;
-      * ) echo "Please answer y or n";;
-    esac
-  done
-else
-  echo "Copying sachet's .vimrc to ~/.vimrc"
-  cp "$sachet__install_cwd"/vimrc "$sachet__install_home"/.vimrc
+  echo ".. Successfully moved ~/.vimrc to ~/.vimrc.old"
 fi
+
+echo "Copying sachet's .vimrc to ~/.vimrc"
+cp "$sachet__install_cwd"/vimrc "$sachet__install_home"/.vimrc
 
 echo ".. Successfully copied vimrc to ~/.vimrc"
 
 # check if .vim folder already exists
 if [ -d "$sachet__install_home"/.vim ]; then
-  while true; do
-    read -p "~/.vim directory already exists -- Overwrite? (y/n) " choice
-
-    case "$choice" in
-      y|Y ) cp -rf "$sachet__install_cwd"/vim/ "$sachet__install_home"/.vim/; break;;
-      n|N ) exit;;
-      * ) echo "Please answer y or n";;
-    esac
-  done
-else
-  echo "Copying sachet's .vim/ to ~/.vim/"
-  cp -r "$sachet__install_cwd"/vim/ "$sachet__install_home"/.vim/
+  echo "Moving your ~/.vim/ to ~/.vim.old/"
+  mv "$sachet__install_home"/.vim/ "$sachet__install_home"/.vim.old/
+  
+  echo ".. Successfully moved ~/.vim/ to ~/.vim.old/"
 fi
+
+echo "Copying sachet's .vim/ to ~/.vim/"
+cp -r "$sachet__install_cwd"/vim/ "$sachet__install_home"/.vim/
 
 echo ".. Successfully copied vim/ to ~/.vim/"
 
