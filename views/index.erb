@@ -1,98 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>sachet - handcraft your development environment</title>
+  <head>
+    <title>sachet - Handcraft your development environment</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-        <link href="css/uniform.default.min.css" rel="stylesheet" media="screen">
-        <link href="css/custom.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/flat-ui.css" rel="stylesheet" media="screen">
+    <link href="css/reveal.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+  </head>
 
-        <%= erb :tracking %>
-    </head>
+  <body>
+    <header>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div id="logo-slogan" class="span12">
+          <h1><i class="icon-magic"></i> sachet</h1>
+          <h2>Handcraft your development environment</h2>
+        </div>
+      </div>
 
-    <body>
-        <header>
-            <div class="container-fluid mid_grey" id="header-container">
-              <div class="row-fluid">
-                <div class="span6" id="logo">
-                  <h1><a href="http://yoursachet.com/">sachet</a></h1>
-                  <h3>
-                    <a href="https://github.com/aam1r/sachet" target="_blank">
-                      <i class="icon-github icon-large"></i> View project on Github
-                    </a>
-                  </h3>
-                </div>
+      <div id="header-buttons" class="row-fluid">
+        <div class="span12">
+          <div class="button span3 offset4">
+            <a href="https://github.com/aam1r/sachet" target="_blank" class="btn btn-large btn-block">
+              <span class="icon"><i class="icon-github"></i></span>
+              <span>View project on GitHub</span>
+            </a>
+          </div>
 
-                <div class="span6" id="meta">
-                  <h2>Handcraft your development environment</h2>
-                  <ul id="social-buttons">
-                    <li><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fyoursachet.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font=segoe+ui&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></li>
-                    <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://yoursachet.com" data-text="sachet - Handcraft your Vim environment online">Tweet</a></li>
-                    <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://yoursachet.com"></div></li>
-                  </ul>
-                </div>
-              </div>
+          <div class="button span3">
+            <a href="#" class="btn btn-large btn-block" data-reveal-id="modal-subscribe-updates" data-animation="fade">
+              <span class="icon"><i class="icon-envelope"></i></span>
+              <span>Subscribe to updates</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+
+    <%= erb :social %>
+
+    <div id="content" class="container-fluid">
+      <h1>Choose your editor</h1>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <a href="#">
+            <div class="editor span2 offset4" data-editor="Vim">
+              <img src="../img/editor-vim.png" />
+              <p>Vim</p>
             </div>
-        </header>
+          </a>
 
-        <div class="container-fluid" id="main-container">
-            <div class="row-fluid" id="main-container-row">
-                <div class="span5 description">
+          <a href="#">
+            <div class="editor coming-soon span2" data-editor="Emacs" data-mc-id="7cfcc7bc3b">
+              <img src="../img/editor-emacs.png" />
+              <p>Emacs</p>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="editor coming-soon span2" data-editor="Sublime Text" data-mc-id="5fd7dc6d57">
+              <img src="../img/editor-sublime-text.png" />
+              <p>Sublime Text</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="customize-editor">
+        <form id="download_form" action="/download" method="post">
+          <hr>
+
+          <h1>Customize your Vim</h1>
+
+          <div id="progress">
+            <div id="breadcrumbs">
+              <span id="step1-label" class="active">OPTIONS</span>
+              &rarr;
+              <span id="step2-label">THEMES</span>
+              &rarr;
+              <span id="step3-label">PLUGINS</span>
+            </div>
+            <div id="indicator">
+              <div class="completed" style="width: 0;" data-progress="0"></div>
+            </div>
+          </div>
+
+          <div id="configuration" class="row-fluid">
+            <div class="span12">
+              <div id="step1">
+                <div class="span6">
+                  <%= erb :configuration, :locals => {:configuration => configuration} %>
+                </div>
+
+                <div id="details" class="span6">
                   <%= erb :description %>
                 </div>
+              </div>
 
-                <form id="download_form" action="/download" method="post">
-                  <div class="display">
-                    <div class="span7">
-                      <div id="part1">
-                        <%= erb :configuration, :locals => {:configuration => configuration} %>
-                      </div>
+              <% [themes, plugins].each do |content| %>
+                <% group = (content == themes) ? 'step2' : 'step3' %>
 
-                      <% [themes, plugins].each do |content| %>
-                        <% group = (content == themes) ? 'part2' : 'part3' %>
-
-                        <div id="<%= group %>">
-                          <%= erb :gallery, :locals => {:group => group, :content => content} %>
-                        </div>
-                      <% end %>
-
-                      <div id="buttons">
-                        <a class="btn btn-primary" id="previous_btn">Previous</a>
-                        <a class="btn btn-primary" id="next_btn">Next</a>
-                        <a class="btn btn-success" id="download_btn">
-                          <i class="icon-download icon-large"></i> Download
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                <div id="<%= group %>" class="gallery">
+                  <%= erb :gallery, :locals => {:group => group, :content => content} %>
+                </div>
+              <% end %>
             </div>
-        </div>
-
-        <footer>
-          <div class="container">
-            <small>
-              Questions? Feedback? Comments? <br />
-              Feel free to send them to me@<a target="_blank" href="http://aam1r.com">aam1r.com</a> or <a href="https://github.com/aam1r/sachet/issues/new" target="_blank">open a Github issue</a>
-            </small>
           </div>
-        </footer>
 
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.uniform.js"></script>
-        <script src="js/custom.js"></script>
-        <script>
-          /* Twitter button */
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          <div id="customize-buttons" class="row-fluid">
+            <div class="span12">
+              <a id="previous-btn" class="disabled" href="#">
+                <i class="icon-circle-arrow-left icon-3x"></i>
+              </a>
 
-          /* Google+ button */
-          (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-          })();
-        </script>
-    </body>
+              <a id="next-btn" href="#">
+                <i class="icon-circle-arrow-right icon-3x"></i>
+              </a>
+
+              <a id="download-btn" href="#">
+                <i class="icon-download icon-3x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+    <div class="row-fluid">
+      <div class="span12">
+        <h1>Be the first one to get updates</h1>
+
+        <div>
+          <form action="http://aam1r.us1.list-manage1.com/subscribe/post?u=4a0df9a7824fdc70faebb3cfa&amp;id=894833b6c9" method="post" class="validate" target="_blank" novalidate>
+            <div class="span3 offset4 email-input">
+              <input type="email" name="EMAIL" placeholder="Enter your email to stay up-to-date">
+            </div>
+            <div class="span1 email-button">
+              <input type="submit" value="Subscribe" name="subscribe" class="btn btn-large btn-block">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%= erb :modals %>
+
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom_checkbox_and_radio.js"></script>
+    <script src="js/jquery.reveal.js"></script>
+    <script src="js/custom.js"></script>
+
+    <%= erb :external_js %>
+  </body>
 </html>

@@ -19,14 +19,12 @@ post '/download' do
   options = CONFIGURATION + THEMES + PLUGINS
 
   # mark selected theme
-  params[params['part2']] = 'on'
-  params.delete('part2')
+  params[params['step2']] = 'on'
+  params.delete('step2')
 
   # generate vim.rc
   vim = VimDownloadable.new(options)
   vim.process_params(params)
-
-  print params.inspect
 
   # serve zip file
   send_file vim.serve_package, :type => 'application/zip',

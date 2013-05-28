@@ -1,25 +1,26 @@
+<% max_row_items = 3 %>
 <% count = 0 %>
-<% content.each do |data| %>
-  <% if count % 2 == 0 %><div class="row-fluid"><% end %>
 
-  <div class="thumb span6">
+<% content.each do |data| %>
+  <% if count % max_row_items == 0 %><div class="row-fluid"><% end %>
+
+  <div class="thumb span4">
     <div class="row">
-      <div class="span12">
+      <div class="name-display span11 offset1">
         <label>
           <input
-            name="<%= group == 'part2' ? 'part2' : data['id']  %>"
+            name="<%= group == 'step2' ? 'step2' : data['id']  %>"
             id="<%= data['id'] %>"
             value="<%= data['id'] %>"
             type="<%= data['input_type'] ? data['input_type'] : 'checkbox' %>" <%= 'checked' if data['checked'] %>
           >
           <label class="heading" for="<%= data['id'] %>"><%= data['brief'] %></label>
-
         </label>
       </div>
     </div>
 
     <div class="row">
-      <div class="span12">
+      <div class="span11 offset1">
         <p class="desc">
           <%= data['description'] %>.
 
@@ -38,7 +39,7 @@
   </div>
 
   <% count += 1 %>
-  <% if count % 2 == 0 %></div><% end %>
+  <% if count % max_row_items == 0 %></div><% end %>
 <% end %>
 
-<% if count % 2 != 0 %></div><% end %>
+<% if count % max_row_items != 0 %></div><% end %>
