@@ -32,7 +32,7 @@ if [ -d "$sachet__install_home"/.vim ]; then
 fi
 
 echo "Copying sachet's .vim/ to ~/.vim/"
-cp -r "$sachet__install_cwd"/vim/ "$sachet__install_home"/.vim/
+cp -r "$sachet__install_cwd"/vim/* "$sachet__install_home"/.vim/
 
 echo ".. Successfully copied vim/ to ~/.vim/"
 
