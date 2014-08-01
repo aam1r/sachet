@@ -6,6 +6,7 @@
 # @usage:
 # Run this script from where the sachet was extracted to
 
+set -e
 
 # sachet installation variables
 sachet__install_home=~/
